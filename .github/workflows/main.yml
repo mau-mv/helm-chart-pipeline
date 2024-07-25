@@ -23,6 +23,9 @@ jobs:
       with:
         version: 'v3.15.3'
 
+    - name: Create kubeconfig directory
+      run: mkdir -p $HOME/.kube
+
     - name: Authenticate to Kubernetes cluster
       env:
         KUBECONFIG: ${{ secrets.KUBECONFIG }}
